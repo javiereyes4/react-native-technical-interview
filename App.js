@@ -8,7 +8,7 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import { Login } from "./src/screens/index";
+import { Login, Books } from "./src/screens/index";
 import I18n from "react-native-i18n";
 import es from "./src/i18n/locales/es.json";
 import en from "./src/i18n/locales/en.json";
@@ -18,11 +18,17 @@ import configureStore from "./src/redux/store/configureStore";
 const store = configureStore();
 
 function App() {
+  const changeLanguages = (value, component) => {
+    I18n.locale = value;
+    component.forceUpdate();
+  };
+
   I18n.fallbacks = true;
-  I18n.defaultLocale = "es-US";
+
   return (
     <View style={styles.container}>
-      <Login />
+      <Books />
+      {/* <Login changeLanguage={changeLanguages} /> */}
     </View>
   );
 }
@@ -41,7 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF",
+    backgroundColor: "#CEF3FF",
   },
   welcome: {
     fontSize: 20,
@@ -58,14 +64,6 @@ const styles = StyleSheet.create({
 function mapStateToProps(state) {
   return {
     loading: state.loading,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    postPasswordLength: (value) => {
-      dispatch(postPasswordLength(value));
-    },
   };
 }
 

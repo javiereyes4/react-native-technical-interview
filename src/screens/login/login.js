@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TextInput, Button } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { name as appName } from "../../../app.json";
 import I18n from "react-native-i18n";
 import { bindActionCreators } from "redux";
@@ -8,18 +8,39 @@ import { postLogin } from "../../redux/actions/loginActions";
 import LoginForm from "../../screens/login/components/loginForm";
 
 class Login extends Component {
-  handleLogin = async () => {
+  handleSubmite = async (value) => {
     const { postLogin } = this.props;
-    console.log(this.props);
-    console.log("JRJRJ");
-    const result = await postLogin();
+    const result = await postLogin(value);
   };
 
   render() {
+    const { changeLanguage } = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{appName}</Text>
-        <LoginForm />
+        <Text style={styles.selectLanguage}>{I18n.t("selectLanguage")}</Text>
+        <View style={styles.imageContent}>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => changeLanguage("es-US", this)}
+          >
+            <Image
+              source={require("../../assets/images/es.png")}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => changeLanguage("en-US", this)}
+            to
+          >
+            <Image
+              source={require("../../assets/images/en.png")}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+        </View>
+        <LoginForm handleSubmit={(value) => this.handleSubmite(value)} />
       </View>
     );
   }
@@ -38,6 +59,20 @@ const styles = StyleSheet.create({
     color: "#3CB7FF",
     fontWeight: "bold",
     padding: 20,
+  },
+  selectLanguage: {
+    fontSize: 20,
+    color: "#3CB7FF",
+    padding: 20,
+  },
+  imageContent: {
+    flexDirection: "row",
+    paddingBottom: 30,
+  },
+  image: {
+    height: 40,
+    width: 40,
+    marginHorizontal: 20,
   },
 });
 

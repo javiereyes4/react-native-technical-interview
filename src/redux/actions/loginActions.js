@@ -1,3 +1,4 @@
+import { services } from "../../services";
 import { IS_LOGGED } from "../constants";
 import { loading } from "./loadingAction";
 
@@ -16,11 +17,8 @@ export function logout() {
 
 export const postLogin = (body) => async (dispatch) => {
   dispatch(loading());
-  // const response = await bkGroupsLegacyServices.postLogin(body)
-  const response = {
-    username: "Javier",
-    pass: "2020",
-  };
+  const response = await services.postLogin(body);
+  console.log(response);
   if (response) {
     alert("login");
     dispatch(changeLogin(response));

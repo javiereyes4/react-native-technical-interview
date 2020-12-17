@@ -7,6 +7,7 @@ import en from "./src/i18n/locales/en.json";
 import { Provider, connect } from "react-redux";
 import configureStore from "./src/redux/store/configureStore";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { COLORS } from "./src/assets/color/colors";
 
 const store = configureStore();
 
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#CEF3FF",
+    backgroundColor: COLORS.bgColor,
   },
   welcome: {
     fontSize: 20,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: "center",
-    color: "#333333",
+    color: COLORS.gray,
     marginBottom: 5,
   },
 });

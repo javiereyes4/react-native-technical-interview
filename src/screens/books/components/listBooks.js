@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import { COLORS } from "../../../assets/color/colors";
 
 function ListBooks(props) {
   const { listBooks, screen } = props;
@@ -75,8 +76,8 @@ const styles = StyleSheet.create({
     width: screenWidth - 100,
     borderRadius: 10,
     height: 100,
-    backgroundColor: "white",
-    shadowColor: "#000",
+    backgroundColor: COLORS.white,
+    shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   }),
   input: {
     fontSize: 18,
-    borderBottomColor: "#3CB7FF",
+    borderBottomColor: COLORS.blue,
     borderBottomWidth: 1,
     marginVertical: 25,
     width: 200,

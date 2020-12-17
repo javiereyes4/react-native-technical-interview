@@ -9,6 +9,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { COLORS } from "../../../assets/color/colors";
 
 function DetailBooks(props) {
   const { dataBook, listSuggestions } = props;
@@ -34,7 +35,7 @@ function DetailBooks(props) {
           width: screenWidth,
           alignContent: "center",
           alignItems: "center",
-          backgroundColor: "#CEF3FF",
+          backgroundColor: COLORS.bgColor,
         }}
       >
         <View style={styles.container(screenWidth)}>
@@ -116,7 +117,7 @@ function DetailBooks(props) {
               onPress={() => changeHeigth()}
               style={{ marginVertical: 10 }}
             >
-              <Text style={{ color: "blue", fontWeight: "bold" }}>
+              <Text style={{ color: COLORS.blue, fontWeight: "bold" }}>
                 {I18n.t("viewMore")}
               </Text>
             </TouchableOpacity>
@@ -132,8 +133,8 @@ const styles = StyleSheet.create({
     width: screenWidth - 100,
     borderRadius: 10,
     height: 210,
-    backgroundColor: "white",
-    shadowColor: "#000",
+    backgroundColor: COLORS.white,
+    shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -150,8 +151,8 @@ const styles = StyleSheet.create({
     height: commentsHeight,
     width: screenWidth - 100,
     alignItems: "center",
-    backgroundColor: "white",
-    shadowColor: "#000",
+    backgroundColor: COLORS.white,
+    shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 2,

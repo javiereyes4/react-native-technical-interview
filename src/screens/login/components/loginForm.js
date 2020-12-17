@@ -10,6 +10,7 @@ import { Dropdown } from "react-native-material-dropdown";
 import I18n from "react-native-i18n";
 import dataAge from "../data/age.json";
 import { Formik } from "formik";
+import { COLORS } from "../../../assets/color/colors";
 
 const LoginForm = (props) => {
   const { handleSubmit } = props;
@@ -121,7 +122,7 @@ const LoginForm = (props) => {
 const styles = StyleSheet.create({
   input: {
     fontSize: 18,
-    borderBottomColor: "#3CB7FF",
+    borderBottomColor: COLORS.blue,
     borderBottomWidth: 1,
     marginBottom: 25,
     width: 200,
@@ -130,17 +131,17 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 10,
     width: 100,
-    backgroundColor: requiredFields ? "#3CB7FF" : "#D5D5D5",
+    backgroundColor: requiredFields ? COLORS.blue : COLORS.lightGray,
     borderRadius: 10,
     alignContent: "center",
     alignItems: "center",
     justifyContent: "center",
   }),
   labelBtn: {
-    color: "white",
+    color: COLORS.white,
   },
   labeError: {
-    color: "red",
+    color: COLORS.red,
   },
 });
 

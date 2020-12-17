@@ -8,6 +8,7 @@ import { getBooks } from "../../redux/actions/booksActions";
 import ListBooks from "./components/listBooks";
 import { TouchableOpacity } from "react-native";
 import DetailBooks from "./components/detailBooks";
+import { COLORS } from "../../assets/color/colors";
 
 function Books(props) {
   const { getBooks, books, logout } = props;
@@ -45,7 +46,7 @@ function Books(props) {
         }
         centerComponent={{
           text: detailView ? I18n.t("bookDetail") : I18n.t("libary"),
-          style: { color: "#fff" },
+          style: { color: COLORS.white },
         }}
         rightComponent={
           <TouchableOpacity onPress={logout}>

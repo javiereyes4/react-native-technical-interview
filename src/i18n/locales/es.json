@@ -1,0 +1,13 @@
+{
+  "name":"Nombre",
+  "lastName":"Apellido",
+  "password":"Contraseña",
+  "email":"Correo",
+  "age":"Edad",
+  "login":"Iniciar",
+  "errorEmail":"Formato de correo invalido",
+  "selectLanguage":"Seleccione un lenguaje",
+  "libary":"LIBROS",
+  "bookDetail":"DETALLE DEL LIBRO",
+  "viewMore":"Ver Mas"
+}

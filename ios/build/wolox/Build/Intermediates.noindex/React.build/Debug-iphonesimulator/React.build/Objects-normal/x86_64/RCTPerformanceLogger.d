@@ -1,0 +1,17 @@
+dependencies: \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTPerformanceLogger.m \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTRootView.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/React/Profiler/RCTProfile.h

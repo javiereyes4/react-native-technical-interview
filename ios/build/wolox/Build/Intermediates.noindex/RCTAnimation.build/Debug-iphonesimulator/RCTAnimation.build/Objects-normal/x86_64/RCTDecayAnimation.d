@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.m \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/macjavier/Projects/react-native-technical-interview/ios/build/wolox/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/Libraries/NativeAnimation/RCTAnimationUtils.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/macjavier/Projects/react-native-technical-interview/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h

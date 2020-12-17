@@ -1,0 +1,13 @@
+{
+  "name":"Name",
+  "lastName":"Last Name",
+  "password":"Password",
+  "email":"Email",
+  "age":"Age",
+  "login":"Login",
+  "errorEmail": "Invalid email format",
+  "selectLanguage":"Select a language",
+  "libary":"LIBRARY",
+  "bookDetail":"BOOK DETAIL",
+  "viewMore":"View More"
+}

@@ -1,49 +1,91 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import { Login, Books } from "./src/screens/index";
+import I18n from "react-native-i18n";
+import es from "./src/i18n/locales/es.json";
+import en from "./src/i18n/locales/en.json";
+import { Provider, connect } from "react-redux";
+import configureStore from "./src/redux/store/configureStore";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+const store = configureStore();
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+function App() {
+  const [isLogged, setIsLogged] = useState(false);
+  const changeLanguages = (value, component) => {
+    I18n.locale = value;
+    component.forceUpdate();
+  };
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+  async function fetchComment() {
+    const validateLogin = await AsyncStorage.getItem("@storage_Key");
+    validateLogin != null && setIsLogged(true);
   }
+
+  async function logout() {
+    await AsyncStorage.clear();
+    setIsLogged(false);
+  }
+
+  useEffect(() => {
+    fetchComment();
+  }, []);
+
+  const validateLogin = (value) => {
+    setIsLogged(value);
+  };
+
+  I18n.fallbacks = true;
+
+  return (
+    <View style={styles.container}>
+      {!isLogged ? (
+        <Login changeLanguage={changeLanguages} validateLogin={validateLogin} />
+      ) : (
+        <Books logout={logout} />
+      )}
+    </View>
+  );
 }
+
+I18n.translations = {
+  en: {
+    ...en,
+  },
+  es: {
+    ...es,
+  },
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#CEF3FF",
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     margin: 10,
   },
   instructions: {
-    textAlign: 'center',
-    color: '#333333',
+    textAlign: "center",
+    color: "#333333",
     marginBottom: 5,
   },
 });
+
+function mapStateToProps(state) {
+  return {
+    loading: state.loading,
+  };
+}
+
+const AppConnected = connect(mapStateToProps, null)(App);
+
+export default () => (
+  <Provider store={store}>
+    <AppConnected />
+  </Provider>
+);

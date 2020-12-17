@@ -10,7 +10,7 @@ import { TouchableOpacity } from "react-native";
 import DetailBooks from "./components/detailBooks";
 
 function Books(props) {
-  const { getBooks, books } = props;
+  const { getBooks, books, logout } = props;
   const [detailView, setDetailView] = useState(false);
   const [detailBook, setDetailBook] = useState();
   const [suggestions, setSuggestions] = useState();
@@ -47,6 +47,14 @@ function Books(props) {
           text: detailView ? I18n.t("bookDetail") : I18n.t("libary"),
           style: { color: "#fff" },
         }}
+        rightComponent={
+          <TouchableOpacity onPress={logout}>
+            <Image
+              style={styles.imageBook}
+              source={require("../../assets/images/logouts.png")}
+            />
+          </TouchableOpacity>
+        }
       />
       <ScrollView>
         {books.books != undefined && !detailView ? (

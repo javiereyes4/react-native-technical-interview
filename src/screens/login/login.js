@@ -6,11 +6,19 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { postLogin } from "../../redux/actions/loginActions";
 import LoginForm from "../../screens/login/components/loginForm";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class Login extends Component {
+  state = {
+    isLogged: false,
+  };
+
   handleSubmite = async (value) => {
     const { postLogin } = this.props;
     const result = await postLogin(value);
+    const validateLogin = await AsyncStorage.getItem("@storage_Key");
+    validateLogin != null && this.setState({ isLogged: true });
+    this.props.validateLogin(validateLogin);
   };
 
   render() {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView } from "react-native";
+import I18n from "react-native-i18n";
 import {
   Dimensions,
   StyleSheet,
@@ -12,6 +13,7 @@ import {
 function DetailBooks(props) {
   const { dataBook, listSuggestions } = props;
   const [data, setDetailBook] = useState();
+  const [commentsHeight, setCommentsHeight] = useState(130);
   useEffect(() => {
     setDetailBook(dataBook);
   }, []);
@@ -19,6 +21,11 @@ function DetailBooks(props) {
   function changeBook(value) {
     setDetailBook(value);
   }
+
+  const changeHeigth = () => {
+    setCommentsHeight(440);
+  };
+
   const screenWidth = Math.round(Dimensions.get("window").width);
   return (
     data != undefined && (
@@ -85,6 +92,36 @@ function DetailBooks(props) {
             </>
           </ScrollView>
         </View>
+        {dataBook.comments != undefined && (
+          <View style={styles.commentsView(commentsHeight, screenWidth)}>
+            {dataBook.comments != undefined && commentsHeight != 130 ? (
+              dataBook.comments.map((item, key) => (
+                <View key={`commentView-${key}`}>
+                  {item != undefined && (
+                    <Text
+                      key={`commentText-${key}`}
+                      style={{ textAlign: "justify", marginVertical: 5 }}
+                    >
+                      {item}
+                    </Text>
+                  )}
+                </View>
+              ))
+            ) : (
+              <Text style={{ textAlign: "justify", marginVertical: 2 }}>
+                {dataBook.comments[0]}
+              </Text>
+            )}
+            <TouchableOpacity
+              onPress={() => changeHeigth()}
+              style={{ marginVertical: 10 }}
+            >
+              <Text style={{ color: "blue", fontWeight: "bold" }}>
+                {I18n.t("viewMore")}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
     )
   );
@@ -108,6 +145,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginVertical: 20,
+  }),
+  commentsView: (commentsHeight, screenWidth) => ({
+    height: commentsHeight,
+    width: screenWidth - 100,
+    alignItems: "center",
+    backgroundColor: "white",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginVertical: 20,
+    padding: 10,
   }),
   imageBookSuggestions: {
     width: 40,

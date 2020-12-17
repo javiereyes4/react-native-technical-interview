@@ -8,5 +8,6 @@
   "errorEmail":"Formato de correo invalido",
   "selectLanguage":"Seleccione un lenguaje",
   "libary":"LIBROS",
-  "bookDetail":"DETALLE DEL LIBRO"
+  "bookDetail":"DETALLE DEL LIBRO",
+  "viewMore":"Ver Mas"
 }

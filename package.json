@@ -8,6 +8,7 @@
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.13.2",
     "@react-native-community/checkbox": "^0.5.6",
     "@react-native-community/masked-view": "^0.1.10",
     "formik": "^2.2.6",

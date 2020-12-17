@@ -37,7 +37,7 @@ function ListBooks(props) {
       <TextInput
         style={styles.input}
         placeholder={"name"}
-        maxLength={10}
+        maxLength={90}
         onChangeText={searchBook}
       />
       {books.books != undefined &&

@@ -1,6 +1,6 @@
 import { services } from "../../services";
 import { IS_LOGGED } from "../constants";
-import { loading } from "./loadingAction";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function changeLogin(data) {
   return {
@@ -16,12 +16,10 @@ export function logout() {
 }
 
 export const postLogin = (body) => async (dispatch) => {
-  dispatch(loading());
-  const response = await services.postLogin(body);
-  console.log(response);
-  if (response) {
-    alert("login");
-    dispatch(changeLogin(response));
+  // const response = await services.postLogin(body);
+  if (body) {
+    await AsyncStorage.setItem("@storage_Key", JSON.stringify(body));
+    dispatch(changeLogin(body));
   }
-  return await response;
+  return await body;
 };

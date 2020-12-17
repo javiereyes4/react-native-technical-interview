@@ -8,5 +8,6 @@
   "errorEmail": "Invalid email format",
   "selectLanguage":"Select a language",
   "libary":"LIBRARY",
-  "bookDetail":"BOOK DETAIL"
+  "bookDetail":"BOOK DETAIL",
+  "viewMore":"View More"
 }
